@@ -14,4 +14,17 @@ jobs:
 
     steps:
       - name: Hello World!
-        run: echo Hello world!
+        run: |
+          mkdir tmp
+          echo Hello world! >> tmp/file.txt
+
+      - name: Save file
+        uses: actions/upload-artifact@v3
+        with:
+          name: report
+          path: tmp/file.txt
+
+
+
+
+
